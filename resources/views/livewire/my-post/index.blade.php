@@ -17,7 +17,7 @@
                 <option value="school">School</option>
             </select>
             <span></span>
-            <input class="mt-1 search" type="text" placeholder="Search" wire:model.lazy="search">
+            <input class="mt-1 search" type="text" id="inText" placeholder="Search" wire:model.lazy="search">
         </div>
 
             @if (session('message'))
@@ -37,8 +37,8 @@
         </div>
     @endforeach
             @if($posts->count() == 0)
-                <h1 class="mt-5 text-center text-black">
-                    Not Found.
+                <h1 class="mt-5 text-center text-white">
+                   {{ '"' . $search . '"' }} not found.
                 </h1>
             @endif
     </div>
@@ -97,3 +97,11 @@
         color: black;
     }
 </style>
+
+<script>
+          $(document).ready(function(){
+        $("#inText").on("input", function(){
+          $("#output").text($(this).val());
+        });
+      });
+</script>

@@ -41,8 +41,8 @@
         </div>
     @endforeach
             @if($recentPosts->count() == 0)
-                <h1 class="mt-5 text-center text-black">
-                    Not Found.
+                <h1 class="mt-5 text-center text-white">
+                    {{ '"' . $search . '"' }} not found.
                 </h1>
             @endif
     </div>
